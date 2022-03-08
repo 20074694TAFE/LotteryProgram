@@ -1,0 +1,8 @@
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.exe.config
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.exe
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.pdb
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.csproj.AssemblyReference.cache
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.csproj.SuggestedBindingRedirects.cache
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.csproj.CoreCompileInputs.cache
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.exe
+C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.pdb

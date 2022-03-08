@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "50a5678d-404b-402d-806a-d27c1538a22d": {
+      "ProjectGuid": "50a5678d-404b-402d-806a-d27c1538a22d",
+      "DisplayName": "LotteryProgram",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
