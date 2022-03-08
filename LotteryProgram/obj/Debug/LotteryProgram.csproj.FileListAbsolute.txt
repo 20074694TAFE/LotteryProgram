@@ -6,3 +6,9 @@ C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\D
 C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.csproj.CoreCompileInputs.cache
 C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.exe
 C:\Users\Spaceshuttle\Documents\GitHub\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.pdb
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.exe.config
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.exe
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\bin\Debug\LotteryProgram.pdb
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.csprojAssemblyReference.cache
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.exe
+C:\Users\20074694\source\repos\LotteryProgram\LotteryProgram\obj\Debug\LotteryProgram.pdb

@@ -54,17 +54,16 @@ namespace LotteryProgram
     {
         int _minRange;
         int _maxRange;
-        //Can change int[] to int
-        int[] _userGenNum;
-        int[] _randGenNum;
+        int _userGenNum;
+        int _randGenNum;
         Random _randomClass = new Random();
 
         public RandomGen()
         {
             this._minRange = 1;
             this._maxRange = 10;
-            this._userGenNum = new int[5];
-            this._randGenNum = new int[5];
+            this._userGenNum = 5;
+            this._randGenNum = 5;
         }
 
         public void SetValues()
@@ -142,7 +141,7 @@ namespace LotteryProgram
                     }
                     else if (num > 0)
                     {
-                        _userGenNum = new int[num];
+                        _userGenNum = num;
                         Console.WriteLine("Total user generated numbers set to: " + num);
                         break;
                     }
@@ -172,7 +171,7 @@ namespace LotteryProgram
                     }
                     else if (num > 0)
                     {
-                        _randGenNum = new int[num];
+                        _randGenNum = num;
                         Console.WriteLine("Total random generated numbers set to: " + num);
                         break;
                     }
@@ -197,12 +196,40 @@ namespace LotteryProgram
         {
             int[] userNumbers = _generateUserNumbers();
             int[] randomNumbers = _generateRandNumbers();
+            int numFound = 0;
             Console.WriteLine("Generation complete");
+            for (int i = 0; i < userNumbers.Length; i++)
+            {
+                if (_binarySearch(randomNumbers, userNumbers[i]))
+                {
+                    numFound = numFound + 1;
+                    Console.WriteLine("Number #" + (i+1) + " (" + userNumbers[i] + ") found in randomly generated list!");
+                }
+            }
+            switch (numFound)
+            {
+                case 0:
+                    {
+                        Console.WriteLine("No numbers were found in randomly generated list.");
+                        break;
+                    }
+                case 1:
+                    {
+                        Console.WriteLine("Found 1 number in randomly generated list!");
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Found " + numFound + " numbers in randomly generated list!");
+                        break;
+                    }
+            }
+            Console.WriteLine("Program complete.");
         }
 
         int[] _generateUserNumbers()
         {
-            int[] userNumbers = new int[_userGenNum.Length];
+            int[] userNumbers = new int[_userGenNum];
             for(int i = 0; i < userNumbers.Length; i++)
             {
                 while (true)
@@ -215,7 +242,7 @@ namespace LotteryProgram
                         {
                             Console.WriteLine("Invalid Input: " + num + " not in range between " + _minRange + " and " + _maxRange);
                         }
-                        else if(_linearSearch(num, userNumbers))
+                        else if(_linearSearch(userNumbers,num))
                         {
                             Console.WriteLine("Invalid Input: " + num + " already in list: " + _getIntString(userNumbers));
                         }
@@ -239,13 +266,13 @@ namespace LotteryProgram
 
         int[] _generateRandNumbers()
         {
-            int[] randNumbers = new int[_randGenNum.Length];
+            int[] randNumbers = new int[_randGenNum];
             for(int i = 0; i < randNumbers.Length; i++)
             {
                 while (true)
                 {
                     int num = _randomClass.Next(_minRange, _maxRange + 1);
-                    if(_linearSearch(num,randNumbers)|| num < _minRange || num > _maxRange)
+                    if(_linearSearch(randNumbers,num)|| num < _minRange || num > _maxRange)
                     {
                         continue;
                     }
@@ -261,7 +288,7 @@ namespace LotteryProgram
             return randNumbers;
         }
 
-        bool _linearSearch(int num, int[] list)
+        bool _linearSearch(int[] list, int num)
         {
             for(int i = 0; i < list.Length; i++)
             {
@@ -272,11 +299,23 @@ namespace LotteryProgram
             }
             return false;
         }
-        bool _binarysearch(int num, int[] list)
+        bool _binarySearch(int[] list, int num)
         {
-            throw new NotImplementedException();
-            //Array.Sort(list);
-            //return false;
+            int min = 0;
+            int max = list.Length - 1;
+            Array.Sort(list);
+            return _binarySearch(list,num,min,max);
+        }
+        bool _binarySearch(int[] list, int num, int min, int max)
+        {
+            if(max >= min)
+            {
+                int mid = (min + max) / 2;
+                if(list[mid] == num) return true;
+                if(list[mid] > num) return _binarySearch(list, num, min, mid - 1);
+                else return _binarySearch(list, num, mid + 1, max);
+            }
+            return false;
         }
 
         string _getIntString(int[] list)
