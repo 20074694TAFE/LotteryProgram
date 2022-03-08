@@ -43,7 +43,7 @@ namespace LotteryProgram
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input: Could not parse " + input);
+                    randomGen.NoParseError(input);
                 }
             }
 
@@ -72,6 +72,7 @@ namespace LotteryProgram
             _setMaxRange();
             _setUserGenTotal();
             _setRandGenTotal();
+            Console.WriteLine("MinRange = " + _minRange + " | MaxRange = " + _maxRange + " | User Generated Numbers = " + _userGenNum + " | Randomly Generated Numbers = " + _randGenNum);
             Console.WriteLine("Customisation complete.");
         }
 
@@ -96,7 +97,7 @@ namespace LotteryProgram
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input: Could not parse " + input);
+                    NoParseError(input);
                 }
             }
         }
@@ -122,7 +123,7 @@ namespace LotteryProgram
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input: Could not parse " + input);
+                    NoParseError(input);
                 }
             }
         }
@@ -152,7 +153,7 @@ namespace LotteryProgram
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input: Could not parse " + input);
+                    NoParseError(input);
                 }
             }
         }
@@ -182,7 +183,7 @@ namespace LotteryProgram
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input: Could not parse " + input);
+                    NoParseError(input);
                 }
             }
         }
@@ -255,7 +256,7 @@ namespace LotteryProgram
                     }
                     else
                     {
-                        Console.WriteLine("Invalid input: Could not parse " + input);
+                        NoParseError(input);
                     }
                 }
             }
@@ -321,11 +322,17 @@ namespace LotteryProgram
         string _getIntString(int[] list)
         {
             string str = "";
-            for(int i = 0; i < list.Length; i++)
+            for(int i = 0; i < list.Length - 1; i++)
             {
                 str = str + list[i] + " ";
             }
+            str = str + list[list.Length - 1];
             return str;
+        }
+        
+         public void NoParseError(string str)
+        {
+            Console.WriteLine("Invalid Input: could not parse '" + str + "'");
         }
     }
 }
